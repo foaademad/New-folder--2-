@@ -1,128 +1,187 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SwiperJS  -->
-    <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-  />
-  <link rel="stylesheet" href="./style.css">
-    <title>Swiper library</title>
-</head>
-<body>
-    
-    <!-- section2 -->
-    <section id="section2" class="section2">
-        <div class="line-container">
-            <hr class="line">
-            <span class="line-text">Top Sellers</span>
-            <hr class="line">
-        </div>
-        <div class="sliddes">
-            <div class="container-slide swiper">
-                <div class="slider-wrapper">
-                    <div class="card-list swiper-wrapper">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
+        <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <div class="container-social mx-auto ">
+        <div class="grid grid-cols-1 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 ">
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-7.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F451352885_511784494640348_960717546867915064_n.jpg%3Fstp%3Ddst-jpg_e15%26_nc_ht%3Dinstagram.fsgn2-7.fna.fbcdn.net%26_nc_cat%3D108%26_nc_ohc%3D6f-EVozUpjwQ7kNvgFGuSX9%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYBnyPqwJWSm3VPneo7wRvR9NJSzl7lOUZeBCaDJmThceg%26oe%3D66BCE063%26_nc_sid%3Dbc0c2c" alt="Garden Planning" class="w-full h-auto rounded-lg" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 11</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                                <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/320w/products/7173/32478/cNy82aOP3wAGWqJVzFiXKslINih4i6WTdtSHrZkCAzpNdhQecZRgVjFs4XbQUmL4__08793.1712267692.jpg?c=2" alt="Product 2">
-                                <h3 style="margin-bottom: 30px;" >Natural Cedar Raised Garden Beds</h3>
-                                <p class="reviews"><span class="stars">★★★★★</span><br> 770 Reviews</p>
-                                <p class="price"><span class="old-price">$409.95</span> $368.95</p>
-                        </div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-11.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F454518884_1288981322481449_232066567204857179_n.webp%3Fstp%3Ddst-jpg_e35%26_nc_ht%3Dinstagram.fsgn2-11.fna.fbcdn.net%26_nc_cat%3D105%26_nc_ohc%3DyVm2kcBqOMAQ7kNvgGYwApw%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYAr_9JgW04LxBPlFpjCpmTKL-tRJOg8XJGMDOfhGP2BFw%26oe%3D66BCCB91%26_nc_sid%3Dbc0c2c" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 81</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                                <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/320w/products/6969/24900/mABca6j15arYoFNKIFz4qdzPuBDg06aHNv73Ep3lEpDEvDnC0hjubt8um47P9T6u__40553.1712267679.jpg?c=2" alt="Product 3">
-                                <h3 style="margin-bottom: 30px;">Farmstead Raised Garden Bed</h3>
-                                <p class="reviews"><span class="stars">★★★★★</span><br> 560 Reviews</p>
-                                <p class="price">$139.95</p>
-                        </div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-7.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F454500011_493943553385704_2032495946136974235_n.webp%3Fstp%3Ddst-jpg_e35%26_nc_ht%3Dinstagram.fsgn2-7.fna.fbcdn.net%26_nc_cat%3D100%26_nc_ohc%3DB5iBNsIVFpgQ7kNvgHC8SiS%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYCP-w72V1ZAO9sihUUJWAnE9YiMHLQsyLZFYr8l09HIQQ%26oe%3D66BCC0E7%26_nc_sid%3Dbc0c2c" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 19</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/640w/products/7084/24441/tOKbR4fha3oR3vvWAgtsB0qJyb8p488foUoIe4CLBzo4aYo0ojVjaFNfxj3FQI1u__65315.1712267661.jpg?c=2" style="margin-bottom: 20px;" alt="Product 4">
-                            <h3>Wildflower Farm's Eco-Lawn Grass Seed - 5 lb</h3>
-                            <p class="reviews"><span class="stars">★★★★★</span><br>126 Reviews</p>
-                            <p class="price">$59.95</p>
-                        </div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-9.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F454282322_985750576568487_7900742532825361411_n.jpg%3Fstp%3Ddst-jpg_e15%26_nc_ht%3Dinstagram.fsgn2-9.fna.fbcdn.net%26_nc_cat%3D103%26_nc_ohc%3DA916R-wtGuQQ7kNvgEkMkrw%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYBorfLLQXTTbb1LJzCRWdtQj4kI3OwG5KHC7lTaT-210Q%26oe%3D66BCDB11%26_nc_sid%3Dbc0c2c" alt="Garden Planning" class="w-full h-auto rounded-lg" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 21</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/1280w/products/6563/33381/400-50-MG_800x__49655.1715279218.jpg?c=2" alt="Product 1">
-                            <h3>Premium Drinking Water Safe Garden Hose - Slim 7/16</h3>
-                            <p class="reviews"><span class="stars">★★★★★</span><br>291 Reviews</p>
-                            <p class="price"> $44.95</p>
-                        </div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-7.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F454439275_461888816608620_5513783950730660307_n.webp%3Fstp%3Ddst-jpg_e35%26_nc_ht%3Dinstagram.fsgn2-7.fna.fbcdn.net%26_nc_cat%3D100%26_nc_ohc%3D1V5FZr7vOBsQ7kNvgH-fwjv%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYAMTNXbDnsQUr3ZlIB4VnDkH8clllrLRuA5cS-L7LpA1w%26oe%3D66BCD414%26_nc_sid%3Dbc0c2c" alt="Garden Planning" class="w-full h-auto rounded-lg" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 51</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/320w/products/6533/31965/gpNU5WfSnLgXNzvGoTAR7jxCyc0w4oGYG8h5dOXG9IkruGNQdA13alJT1Qmr7zk2__17812.1712267695.jpg?c=2" alt="Product 2">
-                            <h3 style="margin-bottom: 30px;">24-7 Reusable Bag</h3>
-                            <p class="reviews"><span class="stars">★★★★★</span><br>80 Reviews</p>
-                            <p class="price">$16.95</p>
-                        </div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-11.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F454179258_925414612726073_2171594836712839778_n.jpg%3Fstp%3Ddst-jpg_e15%26_nc_ht%3Dinstagram.fsgn2-11.fna.fbcdn.net%26_nc_cat%3D105%26_nc_ohc%3DJTOG2lp6qYoQ7kNvgFwOxwV%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYD--iG0LNOpJ_bQXgoYfloVAGZ3D_15txPIQ0GFoJYZXA%26oe%3D66BCEB69%26_nc_sid%3Dbc0c2c" alt="Garden Planning" class="w-full h-auto rounded-lg" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 13</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                                <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/500x500/products/6787/21909/c5T3Q0YnN3NvtvjQnkRnOsxFhBBrEC5BpQz13zN1WXkqzYfkkuCmMJyEIGRh9Ip7__42223.1712267660.jpg?c=2" alt="Product 3">
-                                <h3 style="margin-bottom: 30px;">Pure Beeswax Pillars</h3>
-                                <p class="reviews"><span class="stars">★★★★★</span><br>45 Reviews</p>
-                                <p class="price">$13.95</p>
-                        </div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-6.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F452674844_871216475038534_1787197099267037902_n.webp%3Fstp%3Ddst-jpg_e35%26_nc_ht%3Dinstagram.fsgn2-6.fna.fbcdn.net%26_nc_cat%3D110%26_nc_ohc%3DQ1K9dYf4Uq0Q7kNvgHM93Jm%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYC5pOd1N0fu4VyRo6X59r7NoYnUJJyXn3KPAemqYuun-g%26oe%3D66BCE4F9%26_nc_sid%3Dbc0c2c" alt="Garden Planning" class="w-full h-auto rounded-lg" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 71</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/640w/products/6707/23459/CxLKbGtFGCjvZqgSxLWiSkN10xPP28pF5oN0WQ0DwZr0rwSIixF1fKBzQxtvBpIa__97663.1712267679.jpg?c=2" alt="Product 4">
-                            <h3 style="margin-bottom: 30px;">Eco Wood Treatment</h3>
-                            <p class="reviews"><span class="stars">★★★★★</span><br> 89 Reviews</p>
-                            <p class="price">$24.95</p>
-                        </div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-9.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F452120316_828973129215423_653866463520022501_n.jpg%3Fstp%3Ddst-jpg_e15%26_nc_ht%3Dinstagram.fsgn2-9.fna.fbcdn.net%26_nc_cat%3D103%26_nc_ohc%3D5JL4C-lGn9oQ7kNvgGjjAsg%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYApjvLFRDPGDJy51s8V_FKYfZFBBl0tHV9MUFAdABccJg%26oe%3D66BCDDB5%26_nc_sid%3Dbc0c2c" alt="Garden Planning" class="w-full h-auto rounded-lg" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 1</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/320w/products/6646/24711/ooC4AVHgpb6fdiVHIqMxtRDppf6BC7cuOarw56QcSI7lX8Fu0dDnvvnQjX2bL9Of__96389.1712267650.jpg?c=2" alt="Product 1">
-                            <h3 style="margin-bottom: 30px;">Worm Factory 360 Composter</h3>
-                            <p class="reviews"><span class="stars">★★★★</span><br> 128 Reviews</p>
-                            <p class="price">$131.95</p>
-                        </div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-7.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F450617425_1399966837358552_188944629032659479_n.webp%3Fstp%3Ddst-jpg_e35%26_nc_ht%3Dinstagram.fsgn2-7.fna.fbcdn.net%26_nc_cat%3D108%26_nc_ohc%3DlSNjh6qnJ6sQ7kNvgH4D8EH%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYAIZn_MhocBr6BjKhyqs-BHucD4vtfHOyrw4mqvB1JHiQ%26oe%3D66BCBF59%26_nc_sid%3Dbc0c2c" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 16</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
+                </div>
+            </div>
 
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/500x500/products/7346/26643/kWroSawLJAZmoJJfXNsC0oPpamYuzIOrHUaBQU6GnzrUq8b3QKFCKGfkzBX9ft52__21965.1712267667.jpg?c=2" alt="Product 1">
-                            <h3 style="margin-bottom: 30px;">Microclover Seed 1 lb</h3>
-                            <p class="reviews"><span class="stars">★★★★★</span><br> 46 Reviews</p>
-                            <p class="price"> $39.95</p>
-                        </div>
-
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/500x500/products/6537/23399/i9E5AaYaRvnLI2JYTJUoKp2lYymB3dnUNjOWkquGGAg8CGlVWKjNCaQcAjmZOpjx__02230.1712267677.jpg?c=2" alt="Product 1">
-                            <h3 style="margin-bottom: 30px;">Reusable Produce Bags Set of 5</h3>
-                            <p class="reviews"><span class="stars">★★★★★</span><br> 82 Reviews</p>
-                            <p class="price">$14.95</p>
-                        </div>
-
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/500x500/products/7114/26036/p9JVj6SPzofEjptdoHF2slBKtPh96vac4Qvfgt57i4m1fA2ChKWpmZ3dyLMhUNlb__45548.1712267647.jpg?c=2" alt="Product 1">
-                            <h3>Corn Gluten Organic Fertilizer 8-0-0 - 40lbs</h3>
-                            <p class="reviews"><span class="stars">★★★★★</span><br> 81 Reviews</p>
-                            <p class="price">$74.95</p>
-                        </div>
-
-                        <div class="card-item swiper-slide">
-                            <img src="https://cdn11.bigcommerce.com/s-j602wc6a/images/stencil/500x500/products/7345/26633/Hfw1xXmxh0MEif8PxraAVBxrH6D7DkxeuWs7FSYiNFM38B3nQRJL7WGhlY0Zn7z1__42675.1712267660.jpg?c=2" alt="Product 2">
-                            <h3>MicroLawn Grass Seed & Microclover Blend - 5 lbs</h3>
-                            <p class="reviews"><span class="stars">★★★★</span><br> 24 Reviews</p>
-                            <p class="price"> $44.95</p>
-                        </div>
-
-                    </div>
-
-                    
-                    <!-- If we need navigation buttons -->
-                    <div class="menty-grey swiper-button-prev"></div>
-                    <div class="menty-grey swiper-button-next"></div>
+            <div class="relative bg-card  rounded-lm shadow-lm">
+                <img src="https://phosphor.utils.elfsightcdn.com/?url=https%3A%2F%2Finstagram.fsgn2-6.fna.fbcdn.net%2Fv%2Ft51.29350-15%2F451670794_1015169673620806_4417433081318512654_n.jpg%3Fstp%3Ddst-jpg_e15%26_nc_ht%3Dinstagram.fsgn2-6.fna.fbcdn.net%26_nc_cat%3D110%26_nc_ohc%3DTMbN-E4JvZ4Q7kNvgF6FQkc%26edm%3DAPU89FABAAAA%26ccb%3D7-5%26oh%3D00_AYB6Tec7g-DjN_ng4XkpQir8mtA2kvJ2ojKyR77OIUS9JA%26oe%3D66BCEA58%26_nc_sid%3Dbc0c2c" />
+                <div class="overlay">
+                    <span class="text-lg">❤️ 11</span>
+                    <p class="text-muted-foreground">This is your sign to start planning your fall garden. 🌱 And do it with a friend so you have an alibi for why the laundry isn’t done. 😅 Send this to your garden planning buddy! #fallgarden</p>
                 </div>
             </div>
         </div>
-      </section>
-      
+        
+    </div>
 
-    <!-- Linking SwiperJS script -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./main.js"></script>
-</body>
+  </body>
 </html>
